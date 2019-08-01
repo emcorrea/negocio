@@ -1,0 +1,56 @@
+AppBundle\Entity\Persona:
+    type: entity
+    table: personas
+    indexes:
+        id_genero:
+            columns:
+                - id_genero
+    uniqueConstraints:
+        rut:
+            columns:
+                - rut
+    id:
+        idPersona:
+            type: integer
+            nullable: false
+            options:
+                unsigned: true
+            id: true
+            column: id_persona
+            generator:
+                strategy: IDENTITY
+    fields:
+        rut:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+        dv:
+            type: string
+            nullable: false
+            length: 1
+            options:
+                fixed: true
+        nombres:
+            type: string
+            nullable: false
+            length: 100
+            options:
+                fixed: false
+        apellidos:
+            type: string
+            nullable: false
+            length: 100
+            options:
+                fixed: false
+        idGenero:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: id_genero
+        fechaNacimiento:
+            type: date
+            nullable: false
+            column: fecha_nacimiento
+    lifecycleCallbacks: {  }

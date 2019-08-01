@@ -1,0 +1,49 @@
+AppBundle\Entity\DetalleVenta:
+    type: entity
+    table: detalle_ventas
+    indexes:
+        id_venta:
+            columns:
+                - id_venta
+        id_producto:
+            columns:
+                - id_producto
+        id_valor:
+            columns:
+                - id_valor
+    id:
+        idDetalleVenta:
+            type: integer
+            nullable: false
+            options:
+                unsigned: true
+            id: true
+            column: id_detalle_venta
+            generator:
+                strategy: IDENTITY
+    fields:
+        idVenta:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: id_venta
+        idProducto:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: id_producto
+        idValor:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+            column: id_valor
+        cantidad:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+                default: '0'
+    lifecycleCallbacks: {  }

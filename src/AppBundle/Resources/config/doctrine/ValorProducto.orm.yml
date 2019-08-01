@@ -1,0 +1,35 @@
+AppBundle\Entity\ValorProducto:
+    type: entity
+    table: valor_productos
+    indexes:
+        id_producto:
+            columns:
+                - id_producto
+    id:
+        idValor:
+            type: integer
+            nullable: false
+            options:
+                unsigned: true
+            id: true
+            column: id_valor
+            generator:
+                strategy: IDENTITY
+    fields:
+        idProducto:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: id_producto
+        valor:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+        activo:
+            type: boolean
+            nullable: false
+            options:
+                default: '1'
+    lifecycleCallbacks: {  }

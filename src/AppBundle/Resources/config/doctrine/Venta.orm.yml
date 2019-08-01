@@ -1,0 +1,61 @@
+AppBundle\Entity\Venta:
+    type: entity
+    table: ventas
+    indexes:
+        id_caja:
+            columns:
+                - id_caja
+        id_forma_pago:
+            columns:
+                - id_forma_pago
+    id:
+        idVenta:
+            type: integer
+            nullable: false
+            options:
+                unsigned: true
+            id: true
+            column: id_venta
+            generator:
+                strategy: IDENTITY
+    fields:
+        idCaja:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: id_caja
+        idFormaPago:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: id_forma_pago
+        totalVenta:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: total_venta
+        numeroCuotas:
+            type: integer
+            nullable: true
+            options:
+                unsigned: false
+                comment: 'Correspondiente a la venta por tarjeta de credito'
+                default: '0'
+            column: numero_cuotas
+        numeroBoleta:
+            type: string
+            nullable: true
+            length: 100
+            options:
+                fixed: false
+                comment: 'Correspondiente al numero de boleta o voucher'
+            column: numero_boleta
+        fecha:
+            type: datetime
+            nullable: false
+            options:
+                default: CURRENT_TIMESTAMP
+    lifecycleCallbacks: {  }

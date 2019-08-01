@@ -1,0 +1,48 @@
+AppBundle\Entity\Usuario:
+    type: entity
+    table: usuarios
+    uniqueConstraints:
+        id_persona:
+            columns:
+                - id_persona
+    id:
+        idUsuario:
+            type: integer
+            nullable: false
+            options:
+                unsigned: true
+            id: true
+            column: id_usuario
+            generator:
+                strategy: IDENTITY
+    fields:
+        idPersona:
+            type: integer
+            nullable: false
+            options:
+                unsigned: false
+            column: id_persona
+        nombre:
+            type: string
+            nullable: false
+            length: 100
+            options:
+                fixed: false
+        password:
+            type: string
+            nullable: false
+            length: 100
+            options:
+                fixed: false
+        fechaCreacion:
+            type: datetime
+            nullable: false
+            options:
+                default: CURRENT_TIMESTAMP
+            column: fecha_creacion
+        activo:
+            type: boolean
+            nullable: false
+            options:
+                default: '1'
+    lifecycleCallbacks: {  }

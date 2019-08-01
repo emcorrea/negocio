@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Persona" table="personas">
+    <indexes>
+      <index name="id_genero" columns="id_genero"/>
+    </indexes>
+    <unique-constraints>
+      <unique-constraint name="rut" columns="rut"/>
+    </unique-constraints>
+    <id name="idPersona" type="integer" column="id_persona">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="rut" type="integer" column="rut" nullable="false">
+      <options>
+        <option name="unsigned"/>
+      </options>
+    </field>
+    <field name="dv" type="string" column="dv" length="1" nullable="false">
+      <options>
+        <option name="fixed">1</option>
+      </options>
+    </field>
+    <field name="nombres" type="string" column="nombres" length="100" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="apellidos" type="string" column="apellidos" length="100" nullable="false">
+      <options>
+        <option name="fixed"/>
+      </options>
+    </field>
+    <field name="idGenero" type="integer" column="id_genero" nullable="false">
+      <options>
+        <option name="unsigned"/>
+      </options>
+    </field>
+    <field name="fechaNacimiento" type="date" column="fecha_nacimiento" nullable="false"/>
+  </entity>
+</doctrine-mapping>

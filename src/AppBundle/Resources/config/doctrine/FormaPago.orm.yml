@@ -1,0 +1,30 @@
+AppBundle\Entity\FormaPago:
+    type: entity
+    table: forma_pagos
+    uniqueConstraints:
+        descripcion:
+            columns:
+                - descripcion
+    id:
+        idFormaPago:
+            type: integer
+            nullable: false
+            options:
+                unsigned: true
+            id: true
+            column: id_forma_pago
+            generator:
+                strategy: IDENTITY
+    fields:
+        descripcion:
+            type: string
+            nullable: false
+            length: 100
+            options:
+                fixed: false
+        activo:
+            type: boolean
+            nullable: false
+            options:
+                default: '1'
+    lifecycleCallbacks: {  }
